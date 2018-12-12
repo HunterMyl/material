@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <span>{{title}}</span>
+    <span class="espaco-menu"></span>
+    <button mat-flat-button [matMenuTriggerFor]="menu" color="primary">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/inicio']" routerLinkActive="router-link-active" >
+        <span>Início</span>
+    </button>
+    <button mat-menu-item [routerLink]="['/cadastrar']" routerLinkActive="router-link-active" >
+        <span>Cadastrar</span>
+    </button>
+</mat-menu>
+<router-outlet></router-outlet>

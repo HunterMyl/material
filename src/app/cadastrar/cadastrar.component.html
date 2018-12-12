@@ -1,0 +1,13 @@
+<form [formGroup]="usuarioForm" (ngSubmit)="submitUsuarioData()">
+  <mat-card style="margin: auto; padding: 15px; width: 90%; margin-top: 15px;">
+    <mat-card-title>Novo:</mat-card-title>
+    <mat-form-field class="fullwidth">
+      <input matInput formControlName="nome" placeholder="Nome">
+    </mat-form-field>
+    <mat-form-field class="fullwidth">
+      <input matInput type="email" formControlName="email" placeholder="exemplo@email.com">
+    </mat-form-field>
+
+    <button type="submit" mat-flat-button color="primary" [disabled]="!usuarioForm.valid">Enviar</button>
+  </mat-card>
+</form>
