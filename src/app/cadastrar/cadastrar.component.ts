@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CrudService } from '../shared/crud.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cadastrar',
@@ -14,6 +16,7 @@ export class CadastrarComponent implements OnInit {
   constructor(
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms
+    public router: Router,
   ) { }
 
   ngOnInit() {
@@ -31,5 +34,6 @@ export class CadastrarComponent implements OnInit {
   submitUsuarioData() {
     this.crudApi.AddUsuario(this.usuarioForm.value);
     this.usuarioForm.reset();
+    this.router.navigate(['']);
   }
 }
